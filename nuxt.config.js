@@ -13,6 +13,8 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  css: ['~assets/css/main.css'],
   /*
   ** Customize the progress bar color
   */
@@ -21,6 +23,12 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['axios'],
+    postcss: [
+      require('postcss-import')(),
+      require('postcss-url')(),
+      require('postcss-cssnext')()
+    ],
     /*
     ** Run ESLint on save
     */
@@ -34,5 +42,12 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  manifest: {
+    name: 'myblog',
+    description: 'A blog system',
+    theme_color: '#000'
+  },
+  modules: ['@nuxtjs/pwa'],
+  plugins: ['~/plugins/components.js', '~/plugins/filters.js']
 }

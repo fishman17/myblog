@@ -5,7 +5,7 @@
   "author": "daimuyang <734583898@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nodemon -w ./server -w ./start.js --exec node ./start.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -13,7 +13,18 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "@nuxtjs/pwa": "^2.0.8",
+    "axios": "^0.18.0",
+    "babel-preset-latest-node": "^1.0.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "nuxt": "^1.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-url": "^7.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
